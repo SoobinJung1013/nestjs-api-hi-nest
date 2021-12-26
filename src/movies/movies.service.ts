@@ -22,7 +22,8 @@ export class MoviesService {
   }
 
   deleteOne(id: number): boolean {
-    this.movies.filter((movie) => movie.id !== id);
+    this.getOne(id);
+    this.movies = this.movies.filter((movie) => movie.id !== id);
     return true;
   }
 
